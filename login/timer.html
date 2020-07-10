@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title>timer</title>
+</head>
+<body>
+<h1>account creatation finish</h1>
+<form name="form" action="/processor" method="POST">
+<p id="timer">timer</p>
+<script>
+
+var z =10;
+var x ;
+function pad(n, width) { 
+                n = n + ''; 
+                return n.length >= width ? n :  
+                    new Array(width - n.length + 1).join('0') + n; 
+            } 
+function count()
+ {
+   
+    z--;
+    var m = Math.floor(z/60);
+    var s = Math.floor(z%60);
+    document.getElementById("timer").innerHTML=(pad(m,2)+":"+pad(s,2));
+    x= setTimeout(count,1000);
+    if(z==0)
+    {
+      clearTimeout(x);
+      window.location="/processor";
+     
+    }
+     
+ }
+  count();
+</script>
+<input type="submit" value="log in">
+</form>
+
+
+
+</body>
+</html>

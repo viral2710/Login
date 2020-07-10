@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <title>timer</title>
+</head>
+<body>
+<h1>account creatation finish</h1>
+<form action="/processor" method="POST">
+<p id="timer">timer</p>
+<script>
+var x = new Date();
+var y = x.getTime();
+var total = y + (10000);
+function count()
+ {
+  var now = new Date();
+  var currentTime = now.getTime();
+  
+   var diff = total - currentTime;
+   var s = Math.floor(diff/1000);
+   var m = Math.floor(s/60);
+    m=m%60;
+    s=s%60;
+    m=(m<10)?"0"+m:m;
+    s=(s<10)?"0"+s:s;
+    setTimeout(count,1000);
+    document.getElementById("timer").innerHTML=m":";
+</script>
+<input type="submit" value="log in">
+</form>
+
+
+
+</body>
+</html>

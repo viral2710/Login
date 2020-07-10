@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>PROCESSOR</title>
+</head>
+<body>
+<table >
+
+                    <!-- Table header -->
+
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                    </thead>
+
+                    <!-- Table footer -->
+
+                    <tfoot>
+                    <tr>
+                        <td>END</td>
+                    </tr>
+                    </tfoot>
+
+                    <!-- Table body -->
+
+                    <tbody>
+                    {{ range . }}
+                    <tr>
+                        
+                        <td>{{ .Username }}</td>
+                        <td>{{ .Password }}</td>
+                    </tr>
+                    {{ end }}
+                    </tbody>
+                </table>
+                <form>
+                
+                </form>
+            </body>
+            </html>
