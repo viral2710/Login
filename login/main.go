@@ -138,7 +138,20 @@ func sp(w http.ResponseWriter,r *http.Request){
 		tpl.ExecuteTemplate(w, "signup1.gohtml",nil)	
 	}
 }
-
+func check(Uids string, r *http.Request,w http.ResponseWriter) bool{
+	fmt.Println(Uids)
+		
+		c, err := r.Cookie(Uids)
+		if err != nil {
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
+			return	true
+		}
+		if c.Name != Uids{
+			fmt.Println("error")
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
+		}
+		return true
+}
 
 
 		
